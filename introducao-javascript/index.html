@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Aparecida Nutrição</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	</head>
+	<body>
+
+		<header>
+			<div class="container">
+				<h2 class="titulo">Aparecida Nutrição</h2>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>Meus pacientes</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Peso(kg)</th>
+							<th>Altura(m)</th>
+							<th>Gordura Corporal(%)</th>
+							<th>IMC</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-pacientes">
+						<!-- Aqui os paciences são adicionados via JS -->
+					</tbody>
+				</table>
+
+			</section>
+		</main>
+		<section class="container">
+			<h2 id="titulo-form">Adicionar novo paciente</h2>
+			<form id="form-paciente">
+				<div class="">
+					<label for="nome">Nome:</label>
+					<input required type="text" id="nome" name="nome" placeholder="digite o nome do paciente" class="campo">
+				</div>
+				<div class="grupo">
+					<label for="peso">Peso:</label>
+					<input required type="text" id="peso" name="peso" placeholder="digite o peso do paciente" class="campo campo-medio">
+				</div>
+				<div class="grupo">
+					<label for="altura">Altura</label>
+					<input required type="text" id="altura" name="altura" placeholder="digite a altura do paciente" class="campo campo-medio">
+				</div>
+				<div class="grupo">
+					<label for="gordura">% de gordura</label>
+					<input type="text" id="gordura" name="gordura" placeholder="digite a porcentagem de gordura do paciente" class="campo campo-medio">
+				</div>
+				<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+			</form>
+		</section>
+		<script src="js/calcula-imc.js" ></script>
+		<script src="js/form.js" ></script>
+	</body>
+</html>
