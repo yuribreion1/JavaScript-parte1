@@ -14,7 +14,14 @@ botaoAdicionar.addEventListener("click", function(event) {
     
     //Colocando o TD dentro da tabela
     tabela.appendChild(pacienteTr);
+    var erros = validaPaciente(paciente);
+    if (erros.length > 0) {
+        exibeMensagensDeErro(erros);
+        return;
+    }
     form.reset();
+    var msgErro = document.querySelector("#mensagens-erro");
+    msgErro.innerHTML = "";
 });
 
 function obtemPacienteDoFormulario(form) {
@@ -50,4 +57,38 @@ function montaTr(paciente) {
     pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
 
     return pacienteTr;
+}
+function validaPaciente(paciente) {
+    var erros = [];
+
+    if (paciente.nome.length == 0) {
+        erros.push("O campo nome não pode estar vazio");
+    }
+    if (paciente.gordura.length == 0) {
+        erros.push("O campo gordura não pode ser vazio");
+    }
+    if (paciente.peso.length == 0) {
+        erros.push("O campo peso não pode ser vazio");
+    }
+    if (paciente.altura.length == 0) {
+        erros.push("A altura não pode ser vazia");
+    }
+    if (!validaPeso(paciente.peso)) {
+        erros.push("Peso é invalido");
+    }
+    if (!validaAltura(paciente.altura)) {
+        erros.push("Altura é invalida");
+    }
+    return erros;
+}
+
+function exibeMensagensDeErro(erros) {
+    var ul = document.querySelector("#mensagens-erro");
+    ul.innerHTML = "";
+
+    erros.forEach(function(erro) {
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    }, this);
 }
