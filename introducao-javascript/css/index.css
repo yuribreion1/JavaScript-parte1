@@ -85,6 +85,14 @@ label{
 	width: 100%;
 }
 
+.campo-filtro{
+	margin: 0;
+	border: 1px solid #ccc;
+	padding: .7em;
+	width: 50em;
+	margin-bottom: 1em;
+}
+
 .campo-medio{
 	display: inline-block;
 	padding-right: .5em;
@@ -143,4 +151,8 @@ button[disabled=disabled], button:disabled {
 .fadeOut{
 	opacity: 0;
 	transition: 1s;
+}
+.oculta{
+	display: none;
+	transition: 0.5s;
 }
