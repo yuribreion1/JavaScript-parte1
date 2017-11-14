@@ -9,7 +9,8 @@ campo.addEventListener("input", function () {
             
             var tdNome = paciente.querySelector(".info-nome");
             var nome = tdNome.textContent
-            if (nome != this.value) {
+            var exp = new RegExp(this.value, "i");
+            if (!exp.test(nome)) {
                 paciente.classList.add("oculta")
             } else {
                 paciente.classList.remove("oculta")
