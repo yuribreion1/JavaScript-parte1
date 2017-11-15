@@ -156,3 +156,6 @@ button[disabled=disabled], button:disabled {
 	display: none;
 	transition: 0.5s;
 }
+.invisivel{
+	display: none;
+}
