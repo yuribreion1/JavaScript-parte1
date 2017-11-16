@@ -6,3 +6,5 @@
   <li>Busca em formulário usando expressão regular.</li>
   <li>Efetuar requisição a API externa e alimentar a pagina com JSON.</li>
  </ul>
+ 
+ <p>Link do curso: <a href src="https://www.alura.com.br/curso-online-javascript-programando-na-linguagem-web">aqui</a></p>
